@@ -17,7 +17,7 @@ class Fun(Cog):
 		await ctx.send(f"{choice(('Hello', 'Hi', 'Hey', 'Hiya'))} {ctx.author.mention}!")
 
 	@command(name="dice", aliases=["roll"])
-	@cooldown(1, 10, BucketType.user)
+	@cooldown(1, 60, BucketType.user)
 	async def roll_dice(self, ctx, die_string: str):
 		dice, value = (int(term) for term in die_string.split("d"))
 

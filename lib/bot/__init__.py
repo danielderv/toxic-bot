@@ -106,9 +106,9 @@ class Bot(BotBase):
 
 	async def on_error(self, err, *args, **kwargs):
 		if err == "on_command_error":
-			await args[0].send("Something went wrong in Thunder Bot Land.")
+			await args[0].send("Something went wrong.")
 
-		await self.stdout.send("Please report that issue to our discord.")
+		await self.stdout.send("An error occured.")
 		raise
 
 	async def on_command_error(self, ctx, exc):
@@ -136,8 +136,8 @@ class Bot(BotBase):
 
 	async def on_ready(self):
 		if not self.ready:
-			self.guild = self.get_guild(740929197056196661)
-			self.stdout = self.get_channel(743534287092973628)
+			self.guild = self.get_guild(626608699942764544)
+			self.stdout = self.get_channel(711223407911370812)
 			self.scheduler.add_job(self.rules_reminder, CronTrigger(day_of_week=0, hour=12, minute=0, second=0))
 			self.scheduler.start()
 
@@ -172,8 +172,8 @@ class Bot(BotBase):
 	async def on_message(self, message):
 		if not message.author.bot:
 			if isinstance(message.channel, DMChannel):
-				if len(message.content) < 3:
-					await message.channel.send("Your message should be at least 3 characters in length.")
+				if len(message.content) < 50:
+					await message.channel.send("Your message should be at least 50 characters in length.")
 
 				else:
 					member = self.guild.get_member(message.author.id)

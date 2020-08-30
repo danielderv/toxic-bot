@@ -67,30 +67,30 @@ class Exp(Cog):
 		if lvl >= 50: # Red
 			if (new_role := message.guild.get_role(653940117680947232)) not in message.author.roles:
 				await message.author.add_roles(new_role)
-				await message.author.remove_roles(message.guild.get_role(743534847850709092))
+				await message.author.remove_roles(message.guild.get_role(653940192780222515))
 
 		elif 40 <= lvl < 50: # Yellow
-			if (new_role := message.guild.get_role(743534847850709092)) not in message.author.roles:
+			if (new_role := message.guild.get_role(653940192780222515)) not in message.author.roles:
 				await message.author.add_roles(new_role)
-				await message.author.remove_roles(message.guild.get_role(743534991027470407))
+				await message.author.remove_roles(message.guild.get_role(653940254293622794))
 
 		elif 30 <= lvl < 40: # Green
-			if (new_role := message.guild.get_role(743534991027470407)) not in message.author.roles:
+			if (new_role := message.guild.get_role(653940254293622794)) not in message.author.roles:
 				await message.author.add_roles(new_role)
-				await message.author.remove_roles(message.guild.get_role(743535035138834563))
+				await message.author.remove_roles(message.guild.get_role(653940277761015809))
 
 		elif 20 <= lvl < 30: # Blue
-			if (new_role := message.guild.get_role(743534991027470407)) not in message.author.roles:
+			if (new_role := message.guild.get_role(653940277761015809)) not in message.author.roles:
 				await message.author.add_roles(new_role)
-				await message.author.remove_roles(message.guild.get_role(743535035138834563))
+				await message.author.remove_roles(message.guild.get_role(653940305300815882))
 
 		elif 10 <= lvl < 20: # Purple
-			if (new_role := message.guild.get_role(743535035138834563)) not in message.author.roles:
+			if (new_role := message.guild.get_role(653940305300815882)) not in message.author.roles:
 				await message.author.add_roles(new_role)
-				await message.author.remove_roles(message.guild.get_role(743535079627685948))
+				await message.author.remove_roles(message.guild.get_role(653940328453373952))
 
 		elif 5 <= lvl < 9: # Black
-			if (new_role := message.guild.get_role(743535079627685948)) not in message.author.roles:
+			if (new_role := message.guild.get_role(653940328453373952)) not in message.author.roles:
 				await message.author.add_roles(new_role)
 
 	@command(name="level")
@@ -129,7 +129,7 @@ class Exp(Cog):
 	@Cog.listener()
 	async def on_ready(self):
 		if not self.bot.ready:
-			self.levelup_channel = self.bot.get_channel(743536182495019189)
+			self.levelup_channel = self.bot.get_channel(728350312154398740)
 			self.bot.cogs_ready.ready_up("exp")
 
 	@Cog.listener()

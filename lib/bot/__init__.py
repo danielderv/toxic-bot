@@ -14,7 +14,7 @@ from discord.ext.commands import when_mentioned_or, command, has_permissions
 
 from ..db import db
 
-OWNER_IDS = [385807530913169426]
+OWNER_IDS = [389329488137289730]
 COGS = [path.split("\\")[-1][:-3] for path in glob("./lib/cogs/*.py")]
 IGNORE_EXCEPTIONS = (CommandNotFound, BadArgument)
 
@@ -136,8 +136,8 @@ class Bot(BotBase):
 
 	async def on_ready(self):
 		if not self.ready:
-			self.guild = self.get_guild(626608699942764544)
-			self.stdout = self.get_channel(711223407911370812)
+			self.guild = self.get_guild(748573099326177303)
+			self.stdout = self.get_channel(748573099326177306)
 			self.scheduler.add_job(self.rules_reminder, CronTrigger(day_of_week=0, hour=12, minute=0, second=0))
 			self.scheduler.start()
 
@@ -172,8 +172,8 @@ class Bot(BotBase):
 	async def on_message(self, message):
 		if not message.author.bot:
 			if isinstance(message.channel, DMChannel):
-				if len(message.content) < 50:
-					await message.channel.send("Your message should be at least 50 characters in length.")
+				if len(message.content) < 3:
+					await message.channel.send("Your message should be at least 3 characters in length.")
 
 				else:
 					member = self.guild.get_member(message.author.id)
